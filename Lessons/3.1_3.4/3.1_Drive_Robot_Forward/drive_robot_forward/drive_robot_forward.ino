@@ -6,23 +6,34 @@ Program: Drive the robot forward for a duration
 */
 
 #include <Servo.h>
-
+// creates two servo objects
 Servo left;  
-Servo right;  //creates two servo objects
+Servo right;
 
-int delayValue = 1000; //creates an int that controls how long to drive forward
+// creates an int that controls how long to drive forward
+int delayValue = 1000;
 
-void setup(){ //setup runs just once
+//setup runs just once
+void setup(){
+  // mounts each servo on their respective digital pin
   left.attach(10);
-  right.attach(9); //mounts each servo on their respective digital pin
+  right.attach(9);
+  /* 
+  1500 is like "zero velocity" for wheels.
+  <1500 turns the wheel "backwards"; >1700 turns the wheel "forwards"
+  the servos are attached to the BoeBot in different directions,
+  so in order for it to drive forward, one wheel needs to be
+  going "forward" and one needs to go "backwards"
+  */
   left.writeMicroseconds(1700);
   right.writeMicroseconds(1300);
   delay(delayValue);
   left.writeMicroseconds(1500);
   right.writeMicroseconds(1500);
 }
-void loop(){ //loop runs over and over again
-  ; //nothing needed here
+// loop runs over and over again
+void loop(){
+  ; // nothing needed here
 }
 
 
