@@ -1,0 +1,17 @@
+In this same folder directory is a program that reads the light sensors on your BoeBot. 
+Open the program and upload it to your boebot.
+
+The program will print the values to the serial monitor (or PuTTy)
+
+place your robot on one of the line following courses, and record the white values
+Then place your robot on a black line and record the black values.
+Save these here. you will need them for the line following programs
+
+White Values:
+Left:
+Right:
+
+Black Values:
+Left:
+Right:
+
