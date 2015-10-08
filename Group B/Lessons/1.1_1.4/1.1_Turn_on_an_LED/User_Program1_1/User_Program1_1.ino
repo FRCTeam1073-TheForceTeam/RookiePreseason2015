@@ -8,6 +8,8 @@ Feel free to view the example program within the same folder if you need help!
 
 void setup(){
   //your code goes here
+  pinMode(5, OUTPUT);
+  digitalWrite(5, HIGH);
 }
 
 void loop(){
