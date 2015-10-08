@@ -8,8 +8,18 @@ Feel free to view the example program within the same folder if you need help!
 
 void setup(){
   //your code goes here
+  pinMode(5, OUTPUT);
 }
 
 void loop(){
   //also here
+  int time = 5;
+  for(int brightness = 0; brightness < 255; brightness++){
+    analogWrite(5, brightness);
+    delay(time);
+  }
+  for(int brightness = 255; brightness > 0; brightness--){
+    analogWrite(5, brightness);
+    delay(time);
+  }
 }
