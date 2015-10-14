@@ -1,15 +1,31 @@
-/*Software 1073 Arduino BoeBots
-User Program 
-Method stubs are pre-made. add your own code to complete the challenge!
+int redLed = 5;
+int yellowLed = 3;
+int greenLed = 6;
+int time = 250;
 
-Program Task: Cycle the 3 leds of the robot, so that one led turns on, then the next, then the next
-Feel free to view the example program within the same folder if you need help!
-*/
-
-void setup(){
-  //your code goes here
+void setup() 
+{
+  // put your setup code here, to run once:
+  pinMode(redLed, OUTPUT);
+  pinMode(yellowLed, OUTPUT);
+  pinMode(greenLed, OUTPUT);
 }
 
-void loop(){
-  //also here
+void loop() 
+{
+  // put your main code here, to run repeatedly:
+  digitalWrite(redLed, HIGH);
+  delay(time);
+  digitalWrite(redLed, LOW);
+  delay(time);
+  digitalWrite(yellowLed, HIGH);
+  delay(time);
+  digitalWrite(yellowLed, LOW);
+  delay(time);
+  digitalWrite(greenLed, HIGH);
+  delay(time);
+  digitalWrite(greenLed, LOW);
+  delay(time);
+
+  
 }

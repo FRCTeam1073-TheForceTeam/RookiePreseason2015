@@ -4,21 +4,25 @@ last updated: 9/9/14
 
 Program: Dims an led using a for loop
 */
+int redLed = 5;
 
-int red = 5;
 
-int blinkDelay = 20; //creates an int used for delay timing
-
-void setup(){ //setup runs just once
-  pinMode(red, OUTPUT); //establishes red as an output
+void setup()
+{ 
+  pinMode(redLed, OUTPUT);  
 }
-void loop(){
-  for(int i = 0; i < 255; i += 5){
-    analogWrite(red, i);
-    delay(blinkDelay);
-  }
-  for(int i = 255; i >= 0; i -= 5){
-    analogWrite(red, i);
-    delay(blinkDelay);
-  }
+void loop()
+{
+ for(int i = 0; i < 256; i++)
+ {
+    analogWrite(redLed, i);
+    delay(25);
+ }
+ for(int i = 255; i >= 0; i--)
+ {
+    analogWrite(redLed, i);
+    delay(25);
+ }
+ 
 }
+

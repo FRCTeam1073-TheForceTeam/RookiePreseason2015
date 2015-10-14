@@ -1,15 +1,28 @@
-/*Software 1073 Arduino BoeBots
-User Program 
-Method stubs are pre-made. add your own code to complete the challenge!
+/* Software 1073 Example Program
+Written and debugged for use on the Arduino boebot platform
+last updated: 9/9/14
 
-Program Task: Fade in and out the led on pin 5 using 2 for loops
-Feel free to view the example program within the same folder if you need help!
+Program: Dims an led using a for loop
 */
+int redLed = 5;
 
-void setup(){
-  //your code goes here
+
+void setup()
+{ 
+  pinMode(redLed, OUTPUT);  
+}
+void loop()
+{
+ for(int i = 0; i < 256; i++)
+ {
+    analogWrite(redLed, i);
+    delay(25);
+ }
+ for(int i = 255; i >= 0; i--)
+ {
+    analogWrite(redLed, i);
+    delay(25);
+ }
+ 
 }
 
-void loop(){
-  //also here
-}
