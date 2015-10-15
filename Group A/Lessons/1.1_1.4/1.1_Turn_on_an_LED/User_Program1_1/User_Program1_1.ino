@@ -7,7 +7,10 @@ Feel free to view the example program within the same folder if you need help!
 */
 
 void setup(){
-  //your code goes here
+  int led = 5;
+  pinMode(led, OUTPUT);
+  digitalWrite(led, HIGH);
+  
 }
 
 void loop(){
