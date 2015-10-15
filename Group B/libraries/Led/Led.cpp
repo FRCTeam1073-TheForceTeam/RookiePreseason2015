@@ -3,14 +3,18 @@
 
 Led::Led(int pin, int delay) {
 	// Your code here
+	ledPin = pin;
+	blinkDelay = delay;
 }
 
 void Led::turnOn() {
 	// Your code here
+	digitalWrite(ledPin, HIGH);
 }
 
 void Led::turnOff() {
 	// Your code here
+	digitalWrite(ledPin, LOW);
 }
 
 void Led::turnOnDim(int brightness) {
