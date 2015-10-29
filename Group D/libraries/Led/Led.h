@@ -7,6 +7,7 @@ class Led {
 private:
 	int ledPin;
 	int blinkDelay;
+  bool on;
 public:
 	Led(int pin, int delay = 500);
 	void turnOn();
@@ -15,6 +16,8 @@ public:
 	void cycle(int count, int dutyCycle = 50);
 	void rampUp(int steps, int delayMs);
 	void rampDown(int steps, int delayMs);
+  bool isOn();
+  
 };
 
 #endif
