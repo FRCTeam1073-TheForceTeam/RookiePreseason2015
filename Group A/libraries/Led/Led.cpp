@@ -2,19 +2,20 @@
 #include "Led.h"
 
 Led::Led(int pin, int delay) {
-	// Your code here
+	pinMode(pin, OUTPUT);
+	ledPin=pin;
 }
 
 void Led::turnOn() {
-	// Your code here
+	digitalWrite(ledPin, HIGH);
 }
 
 void Led::turnOff() {
-	// Your code here
+	digitalWrite(ledPin, LOW);
 }
 
 void Led::turnOnDim(int brightness) {
-	// Your code here
+	analogWrite(ledPin, brightness);
 }
 
 

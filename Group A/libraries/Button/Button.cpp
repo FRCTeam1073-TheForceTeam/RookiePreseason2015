@@ -3,9 +3,12 @@
 #include "Button.h"
 
 Button::Button(int thePinNum) {
-	// Your code here
+	pinMode(thePinNum, INPUT);
+	pinNum=thePinNum;
 }
 
 bool Button::isPressed() {
-	// Your code here
+	if (digitalRead(thePinNum) == HIGH) {return true}
+		else {return false};
+
 }

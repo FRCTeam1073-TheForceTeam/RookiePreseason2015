@@ -1,15 +1,10 @@
-
-#include "Arduino.h"
 #include "Potentiometer.h"
 
-Potentiometer::Potentiometer(int thePinNum) {
-	// Your code here
+Potentiometer::Potentiometer(int thePinNum){
+	pinMode(thePinNum, INPUT);
+	pinNum=thePinNum; 
 }
 
-int Potentiometer::getValue() {
-	// Your code here
-}
-
-int Potentiometer::getPercent() {
-	// Your code here
+int Potentiometer::getValue (){
+	analogRead(pinNum);
 }
