@@ -1,7 +1,6 @@
 #ifndef Drive_h
 #define Drive_h
 #include "Servo.h"
-
 class Drive {
 private:
   int zeroPower = 1500;

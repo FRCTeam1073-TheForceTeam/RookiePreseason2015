@@ -3,31 +3,42 @@
 #include "Drive.h"
 
 
-private Servo* meme = new Servo();
-private Servo* meme1 = new Servo();
+
 Drive::Drive(int leftPin, int rightPin) 
 {
-	
-	left = leftPin;
-	right = rightPin;
-	meme.attach(leftPin);
-	meme1.attach(rightPin);
+	left.attach(leftPin);
+	right.attach(rightPin);
 }
 
 // ToDo: implement turning
 
-void Drive::move(int percentPower, int turnDir = 0){
-  // Your code here
+void Drive::move(int percentPower, int turnDir = 0){  
+  	int offset = (int) ((float) zeroPower * (float) percentPower / 100.0);
+  int leftSpeed = 0, rightSpeed = 0;
+
+  if (turnDir == 0) {
+  	leftSpeed = zeroPower + offset;
+  	rightSpeed = zeroPower - offset;
+  }
+  else if (turnDir < 0){
+  	leftSpeed = zeroPower - offset;
+  	rightSpeed = zeroPower - offset;
+  }
+  else{
+  	leftSpeed = zeroPower + offset;
+  	rightSpeed = zeroPower + offset;
+  }
+  left.writeMicroseconds(leftSpeed);
+  right.writeMicroseconds(rightSpeed);
 }
 
 void Drive::fwd(int percentPower)
 {
-	meme.write(90 + (90 * (percentPower / 100)));
-	meme1.write(90 - (90 * (percentPower / 100)));	
+	move(percentPower);	
 }
 
 void Drive::rev(int percentPower){
-  // Your code here
+  move(-percentPower);
 }
 
 void Drive::turnLeft(int turnRate, int turnMs){
@@ -39,5 +50,5 @@ void Drive::turnRight(int turnRate, int turnMs){
 }
 
 void Drive::stop(){
-  // Your code here
+  move(0);
 }
